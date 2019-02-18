@@ -1,2 +1,2 @@
 # ClarkApp
-an app for Clark
+An app for Clark University
