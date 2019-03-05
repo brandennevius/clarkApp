@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Container,
   Header,
   Left, 
+  Right,
   Content, 
   Form, 
   Item, 
