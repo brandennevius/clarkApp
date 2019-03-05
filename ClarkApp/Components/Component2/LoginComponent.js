@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Container, 
-  Header, 
+import { Container,
+  Header,
+  Left, 
   Content, 
   Form, 
   Item, 
@@ -13,11 +14,11 @@ import { Container,
   Footer, 
   FooterTab} from 'native-base';
 import { StyleSheet, Alert} from 'react-native';
+import MenuButton from "../Component3/MenuButton";
 
 /*
 This is a sample login page using code from native base
 */
-
 export default class LoginComponent extends Component {
 
   /*
@@ -25,17 +26,20 @@ export default class LoginComponent extends Component {
   */
   _onPressButton() {
     Alert.alert('You tapped the button!')
-    
     }
 
   render() {
     return (
       <Container>
         <Header>
-          <Body>
-            <Title>Clark App</Title>
-          </Body>
-          </Header> 
+            <Left>
+                <MenuButton navigation = {this.props.navigation}/>
+            </Left>
+            <Body>
+                <Title>Clark App</Title>
+            </Body>
+            <Right />
+        </Header> 
         <Content>
           <Form>
             <Item stackedLabel>

@@ -13,13 +13,10 @@ import { Container,
   Icon, 
   Text, 
   Accordion,
-  Form,
-  Item,
-  Label,
-  Input } 
+ } 
   from 'native-base';
 import {StyleSheet, Alert} from 'react-native';
-import SideBar from './SideBar.js';
+import MenuButton from "../Component3/MenuButton";
 
 /*
 This code is for the accordian component provided by native base
@@ -60,27 +57,12 @@ export default class HomepageComponent extends Component {
     };
   }
 
-  /*
-  Both of these functions are used to open and close the drawer
-  */
-  closeDrawer = () => {
-    this._drawer._root.close()
-  };
-  openDrawer = () => {
-    this._drawer._root.open()
-  };  
-
   render() {
     return (
-      <Drawer ref={(ref) => { this._drawer = ref; }}
-        content={<SideBar navigator={this._navigator} />}
-        onClose={() => this.closeDrawer()}>
       <Container style = {{flex: 1}}>
         <Header>
           <Left>
-            <Button transparent onPress={()=> this.openDrawer()}>
-              <Icon name='menu' />
-            </Button>
+            <MenuButton navigation = {this.props.navigation}/>
           </Left>
           <Body>
             <Title>Clark App</Title>
@@ -99,7 +81,6 @@ export default class HomepageComponent extends Component {
           </FooterTab>
         </Footer>
       </Container>
-      </Drawer>
     );
   }
 }
