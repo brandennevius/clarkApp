@@ -15,7 +15,7 @@ import { Container,
   Accordion,
  } 
   from 'native-base';
-import {StyleSheet, Alert} from 'react-native';
+import {StyleSheet, Alert, Dimensions} from 'react-native';
 import MenuButton from "../Component3/MenuButton";
 
 /*
@@ -60,23 +60,23 @@ export default class HomepageComponent extends Component {
   render() {
     return (
       <Container style = {{flex: 1}}>
-        <Header>
+        <Header style= {styles.header}>
           <Left>
             <MenuButton navigation = {this.props.navigation}/>
           </Left>
           <Body>
-            <Title>Clark App</Title>
-            <Text>{this.state.date}</Text>
+            <Title style={styles.Title}></Title>
+            <Text style ={styles.Date}>{this.state.date}</Text>
           </Body>
           <Right />
         </Header>
         <Content padder>
-          <Accordion dataArray={dataArray} expanded={0}/>
+  
         </Content>
         <Footer style = {styles.footer}>
           <FooterTab >
             <Button full>
-              <Text style = {styles.footerText}>Clark University - Worcester Mass</Text>
+              <Text style = {styles.footerText}></Text>
             </Button>
           </FooterTab>
         </Footer>
@@ -85,15 +85,31 @@ export default class HomepageComponent extends Component {
   }
 }
 
+const HEIGHT = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   footer: {
-    backgroundColor: '#E57373',
+    backgroundColor: '#dd2a2a',
+    height: HEIGHT/40,
+    
+
     //fontFamily: 'GillSans',
     
   },
   footerText:{
     color: 'black',
     fontSize: 15,
-    
   },
+  Date: {
+    textAlign: 'center',
+  },
+  Title: {
+    textAlign: 'center',
+    color: '#dd2a2a',
+  },
+  header: {
+    height: 100,
+    backgroundColor: '#dd2a2a',
+  }
+
 });

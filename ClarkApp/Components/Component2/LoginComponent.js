@@ -14,6 +14,7 @@ import { Container,
   Title, 
   Footer, 
   FooterTab} from 'native-base';
+
 import { StyleSheet, Alert} from 'react-native';
 import MenuButton from "../Component3/MenuButton";
 
@@ -26,13 +27,13 @@ export default class LoginComponent extends Component {
   used this code for example submit button
   */
   _onPressButton() {
-    Alert.alert('You tapped the button!')
+    Alert.alert('Logged In')
     }
 
   render() {
     return (
       <Container>
-        <Header>
+        <Header style = {styles.header}>
             <Left>
                 <MenuButton navigation = {this.props.navigation}/>
             </Left>
@@ -56,10 +57,10 @@ export default class LoginComponent extends Component {
             <Text style = {styles.text}>Submit</Text>
           </Button>
         </Content>
-        <Footer>
+        <Footer style={styles.Footer}>
           <FooterTab>
             <Button full>
-              <Text>Clark University - Worcester Mass</Text>
+              <Text></Text>
             </Button>
           </FooterTab>
         </Footer>
@@ -74,5 +75,13 @@ const styles = StyleSheet.create({
     fontFamily: 'GillSans',
     
   },
+  header: {
+    height: 100,
+    backgroundColor: '#dd2a2a',
+  },
+  Footer:{
+    backgroundColor: '#dd2a2a',
+    height: 20,
+  }
 });
 
