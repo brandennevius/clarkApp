@@ -16,6 +16,10 @@ import HomepageComponent from '../Component1/HomepageComponent';
 const WIDTH = Dimensions.get('window').width //gets the width of the window
 const HEIGHT = Dimensions.get('window').height
 
+/*
+This is what changes the display of the user interface for the drawer.
+navLink is a function that uses touchableOpacity to activate and display links.
+*/
 export default class MenuDrawer extends React.Component {
     navLink(nav, text) {
         return (

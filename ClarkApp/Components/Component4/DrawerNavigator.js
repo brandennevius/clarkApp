@@ -16,6 +16,11 @@ Whichever page is listed first is the first page that is displayed
 
 //***Update: this is now changed to the MenuDrawer page under navLinks*** */
 
+/*
+contentComponent is used to add a component to paste onto the menu bar.
+MenuDrawer is being passed navigation variable that is passed to the contentComponent function.
+Since navigation is now in the menuDrawer component it can be passed to navlink in menuDrawer
+*/
 const DrawerConfig = {
     drawerWidth: WIDTH * 0.83,
     contentComponent: ({ navigation }) => {
