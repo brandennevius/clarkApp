@@ -52,7 +52,7 @@ export default class CalendarsComponent extends Component {
                                 minDate={'2019-03-01'}
                                 markingType={'custom'}
                                 markedDates={{
-                                    '2018-03-01': {
+                                    '2019-03-01': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'white',
@@ -63,8 +63,8 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2018-03-08': { selected: true },
-                                    '2018-03-09': {
+                                    '2019-03-08': { selected: true },
+                                    '2019-03-09': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'red',
@@ -75,8 +75,8 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2018-03-10': { disabled: true },
-                                    '2018-03-14': {
+                                    '2019-03-10': { disabled: true },
+                                    '2019-03-14': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'green',
@@ -86,7 +86,7 @@ export default class CalendarsComponent extends Component {
                                             },
                                         },
                                     },
-                                    '2018-03-15': {
+                                    '2019-03-15': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'black',
@@ -97,7 +97,7 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2018-03-20': {
+                                    '2019-03-20': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'pink',
@@ -108,8 +108,8 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2018-03-21': { disabled: true },
-                                    '2018-03-28': {
+                                    '2019-03-21': { disabled: true },
+                                    '2019-03-28': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'green',
@@ -120,7 +120,7 @@ export default class CalendarsComponent extends Component {
                                             },
                                         },
                                     },
-                                    '2018-03-29': {
+                                    '2019-03-29': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'white',
@@ -131,7 +131,7 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2018-03-30': {
+                                    '2019-03-30': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'violet',
@@ -146,7 +146,7 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2018-03-31': {
+                                    '2019-03-31': {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'green',
@@ -161,9 +161,7 @@ export default class CalendarsComponent extends Component {
                                 hideArrows={false}
                             />
                         <Right />
-                    
                     <Content padder>
-
                     </Content>
                     <Footer style={styles.footer}>
                         <FooterTab >

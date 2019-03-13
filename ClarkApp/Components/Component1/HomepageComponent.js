@@ -87,6 +87,9 @@ export default class HomepageComponent extends Component {
 
 const HEIGHT = Dimensions.get('window').height;
 
+const width = '80%';
+const height = '40%';
+
 const styles = StyleSheet.create({
   footer: {
     backgroundColor: '#dd2a2a',
@@ -108,8 +111,12 @@ const styles = StyleSheet.create({
     color: '#dd2a2a',
   },
   header: {
-    height: 100,
+    height, 
+    width,
     backgroundColor: '#dd2a2a',
+    flex: 2,
+  
   }
 
+ 
 });
