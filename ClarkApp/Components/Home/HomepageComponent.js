@@ -71,15 +71,8 @@ export default class HomepageComponent extends Component {
           <Right />
         </Header>
         <Content padder>
-  
         </Content>
-        <Footer style = {styles.footer}>
-          <FooterTab >
-            <Button full>
-              <Text style = {styles.footerText}></Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <Footer1/>
       </Container>
     );
   }
@@ -115,6 +108,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#dd2a2a'
   
   }
-
- 
 });

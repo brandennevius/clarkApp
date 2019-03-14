@@ -9,8 +9,8 @@ import {
     StyleSheet,
     TouchableOpacity,
 } from 'react-native';
-import LoginComponent from '../Component2/LoginComponent';
-import HomepageComponent from '../Component1/HomepageComponent';
+import LoginComponent from '../Screens/LoginComponent';
+import HomepageComponent from '../Home/HomepageComponent';
 
 
 const WIDTH = Dimensions.get('window').width //gets the width of the window

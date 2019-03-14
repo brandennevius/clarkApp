@@ -57,13 +57,7 @@ export default class LoginComponent extends Component {
             <Text style = {styles.text}>Submit</Text>
           </Button>
         </Content>
-        <Footer style={styles.Footer}>
-          <FooterTab>
-            <Button full>
-              <Text></Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <Footer1/>
       </Container>
     );
   }
