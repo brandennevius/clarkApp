@@ -17,15 +17,7 @@ import { Container,
   from 'native-base';
 import {StyleSheet, Alert, Dimensions} from 'react-native';
 import MenuButton from "../Component3/MenuButton";
-
-/*
-This code is for the accordian component provided by native base
-*/
-  const dataArray = [
-    { title: "First Element", content: "Lorem ipsum dolor sit amet" },
-    { title: "Second Element", content: "Lorem ipsum dolor sit amet" },
-    { title: "Third Element", content: "Lorem ipsum dolor sit amet" }
-  ];
+import Footer1 from '../Footer/Footer1'
 
 
 /*
@@ -73,13 +65,7 @@ export default class HomepageComponent extends Component {
         <Content padder>
   
         </Content>
-        <Footer style = {styles.footer}>
-          <FooterTab >
-            <Button full>
-              <Text style = {styles.footerText}></Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <Footer1/>
       </Container>
     );
   }

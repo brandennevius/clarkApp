@@ -18,6 +18,7 @@ import {
 } from 'native-base';
 import { Calendar } from 'react-native-calendars';
 import MenuButton from '../Component3/MenuButton';
+import Footer1 from '../Footer/Footer1'
 
 export default class CalendarsComponent extends Component {
     constructor(props) {
@@ -163,13 +164,7 @@ export default class CalendarsComponent extends Component {
                         <Right />
                     <Content padder>
                     </Content>
-                    <Footer style={styles.footer}>
-                        <FooterTab >
-                            <Button full>
-                                <Text style={styles.footerText}></Text>
-                            </Button>
-                        </FooterTab>
-                    </Footer>
+                    <Footer1/>
                 </Container>
         );
     }

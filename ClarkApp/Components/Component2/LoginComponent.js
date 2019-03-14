@@ -11,12 +11,11 @@ import { Container,
   Button, 
   Text, 
   Body, 
-  Title, 
-  Footer, 
-  FooterTab} from 'native-base';
+  Title,  } from 'native-base';
 
 import { StyleSheet, Alert} from 'react-native';
 import MenuButton from "../Component3/MenuButton";
+import Footer1 from '../Footer/Footer1'
 
 /*
 This is a sample login page using code from native base
@@ -57,13 +56,7 @@ export default class LoginComponent extends Component {
             <Text style = {styles.text}>Submit</Text>
           </Button>
         </Content>
-        <Footer style={styles.Footer}>
-          <FooterTab>
-            <Button full>
-              <Text></Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        <Footer1/>
       </Container>
     );
   }
@@ -79,9 +72,9 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: '#dd2a2a',
   },
-  Footer:{
-    backgroundColor: '#dd2a2a',
-    height: 20,
-  }
+  // Footer:{
+  //   backgroundColor: '#dd2a2a',
+  //   height: 20,
+  // }
 });
 
