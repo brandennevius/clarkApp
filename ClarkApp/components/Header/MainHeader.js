@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Header, Left, Body, Right, Button, Icon, Title } from 'native-base';
-export default class Header extends Component {
+import { Left, Body, Button, Icon, Title, Header, Right} from 'native-base';
+
+export default class MainHeader extends Component {
   render() {
     return (
 
@@ -13,6 +14,7 @@ export default class Header extends Component {
           <Body>
             <Title>Header</Title>
           </Body>
+          <Right></Right>
         </Header>
 
     );

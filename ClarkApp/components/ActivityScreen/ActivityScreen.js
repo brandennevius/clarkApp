@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Container, Content, Button, Icon } from 'native-base';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+import Header from '../Header/MainHeader';
+import Footer from '../Footer/MainFooter';
 
 class ActivityScreen extends Component {
   render() {
     return (
       <Container>
-        <Header />
+        <Header/>
         <Content />
-        <Footer />
+        <Footer/>
       </Container>
     );
   }

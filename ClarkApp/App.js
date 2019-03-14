@@ -6,7 +6,7 @@ import ActivityScreen from './components/ActivityScreen/ActivityScreen';
 export default class App extends Component {
   render() {
     return (
-    <ActivityScreen></ActivityScreen>
+    <ActivityScreen/>
     )
   }
 }
