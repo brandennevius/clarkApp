@@ -63,7 +63,6 @@ export default class HomepageComponent extends Component {
           <Right />
         </Header>
         <Content padder>
-  
         </Content>
         <Footer1/>
       </Container>

@@ -16,6 +16,7 @@ import { Container,
 import { StyleSheet, Alert} from 'react-native';
 import MenuButton from "../Component3/MenuButton";
 import Footer1 from '../Footer/Footer1'
+import Header1 from '../Header/Header1'
 
 /*
 This is a sample login page using code from native base
@@ -32,15 +33,7 @@ export default class LoginComponent extends Component {
   render() {
     return (
       <Container>
-        <Header style = {styles.header}>
-            <Left>
-                <MenuButton navigation = {this.props.navigation}/>
-            </Left>
-            <Body>
-                <Title>Clark App</Title>
-            </Body>
-            <Right />
-        </Header> 
+        <Header1 />
         <Content>
           <Form>
             <Item stackedLabel>

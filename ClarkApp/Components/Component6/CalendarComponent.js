@@ -19,6 +19,7 @@ import {
 import { Calendar } from 'react-native-calendars';
 import MenuButton from '../Component3/MenuButton';
 import Footer1 from '../Footer/Footer1'
+import Header1 from '../Header/Header1'
 
 export default class CalendarsComponent extends Component {
     constructor(props) {
@@ -35,15 +36,7 @@ export default class CalendarsComponent extends Component {
     render() {
         return (
                 <Container style={{ flex: 0 }}>
-                    <Header style ={styles.header}>
-                        <Left>
-                            <MenuButton navigation={this.props.navigation}/>
-                        </Left>
-                        <Body>
-                            <Title>Calendar</Title>
-                            </Body> 
-                            <Right />
-                            </Header>
+                    <Header1/>
                             
                             <Calendar style={styles.calendar}
                                 style={styles.calendar}
