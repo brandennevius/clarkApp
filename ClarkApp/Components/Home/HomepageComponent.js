@@ -16,7 +16,7 @@ import { Container,
  } 
   from 'native-base';
 import {StyleSheet, Alert, Dimensions} from 'react-native';
-import MenuButton from './MenuButton'
+import MenuButton from "../Component3/MenuButton";
 import Footer1 from '../Footer/Footer1'
 
 
