@@ -34,7 +34,7 @@ export default class HoursComponent extends Component {
 }
 
 const width = '100%';
-const HEIGHT = Dimensions.get('window').height
+const HEIGHT = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
     Title: {

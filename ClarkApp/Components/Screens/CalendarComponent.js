@@ -177,6 +177,8 @@ export default class CalendarsComponent extends Component {
 }
 
 const WIDTH = Dimensions.get('window').width;
+const HEIGHT = Dimensions.get('window').height;
+const width = '100%';
 
 
 
@@ -202,8 +204,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white'
     },
     header: {
-        height: 100,
-        backgroundColor:'#dd2a2a',
+        height: HEIGHT * .10,
+        width,
+        backgroundColor: '#dd2a2a'
+
     },
     footer: {
         height: 20,
