@@ -18,6 +18,7 @@ import {
 } from 'native-base';
 import { Calendar } from 'react-native-calendars';
 import MenuButton from '../Home/MenuButton';
+import Footer1 from '../Footer/Footer1';
 
 export default class CalendarsComponent extends Component {
     constructor(props) {
