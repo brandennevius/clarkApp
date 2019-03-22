@@ -7,6 +7,7 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@types/expo__vector-icons": "^9.0.1",
     "expo": "^32.0.0",
     "native-base": "^2.12.0",
     "node-google-calendar": "^1.1.1",
@@ -16,7 +17,7 @@
     "react-native-calendars": "^1.22.0",
     "react-native-customize-selected-date": "^1.0.1",
     "react-native-ionicons": "^4.5.5",
-    "react-native-vector-icons": "^6.3.0",
+    "react-native-vector-icons": "^6.4.1",
     "react-navigation": "^3.3.2"
   },
   "devDependencies": {

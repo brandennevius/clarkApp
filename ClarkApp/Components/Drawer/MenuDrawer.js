@@ -1,19 +1,9 @@
 import React from 'react';
-import {
-    View,
-    Text,
-    Image,
-    ScrollView,
-    Platform,
-    Dimensions,
-    StyleSheet,
-    TouchableOpacity,
-} from 'react-native';
-import LoginComponent from '../Component2/LoginComponent';
-import HomepageComponent from '../Component1/HomepageComponent';
+import {View,Text,Image,ScrollView,Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
 
 
-const WIDTH = Dimensions.get('window').width //gets the width of the window
+
+const WIDTH = Dimensions.get('window').width 
 const HEIGHT = Dimensions.get('window').height
 
 /*
@@ -28,10 +18,7 @@ export default class MenuDrawer extends React.Component {
             </TouchableOpacity>
         )
     }
-/* The {navLink} is the new way to add a page to the drawer. 
-   The navLink takes in the name of the link which is in the DrawerNavigator file, 
-   then the second property is the text you want it to display on the page
-*/
+
     render() {
         return (
             <View style={styles.container}>
@@ -39,7 +26,7 @@ export default class MenuDrawer extends React.Component {
                     <View style={styles.topLinks}>
                         <View style={styles.profile}>
                             <View style={styles.imgView}>
-                                <Image style={styles.img} source={require('../Component5/jonasClark.jpg')} />
+                                <Image style={styles.img} source={require('../Drawer/jonasClark.jpg')} />
                             </View>
                             <View style={styles.profileText}>
                                 <Text style={styles.name}></Text>
@@ -50,12 +37,13 @@ export default class MenuDrawer extends React.Component {
                     <View style={styles.bottomLinks}>
                         {this.navLink('Home', 'Home')}
                         {this.navLink('Calendar', 'Calendar')}
-                        {this.navLink('Login','Login')}
+                        {this.navLink('Hours', 'Hours')}
+                        
                         
                     </View>
                 </ScrollView>
                 <View style={styles.footer}>
-                    <Text style={styles.description}>Clark University</Text>
+                    {this.navLink('Login', 'Login')}
                     <Text style={styles.version}>v1.0</Text>
                 </View>
             </View>

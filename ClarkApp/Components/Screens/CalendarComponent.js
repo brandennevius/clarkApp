@@ -17,8 +17,7 @@ import {
     Accordion,
 } from 'native-base';
 import { Calendar } from 'react-native-calendars';
-import MenuButton from '../Component3/MenuButton';
-import Footer1 from '../Footer/Footer1'
+import MenuButton from '../Home/MenuButton';
 
 export default class CalendarsComponent extends Component {
     constructor(props) {

@@ -14,8 +14,8 @@ import { Container,
   Title,  } from 'native-base';
 
 import { StyleSheet, Alert} from 'react-native';
-import MenuButton from "../Component3/MenuButton";
-import Footer1 from '../Footer/Footer1'
+import MenuButton from "../Home/MenuButton";
+import Footer1 from '../Footer/Footer1';
 
 /*
 This is a sample login page using code from native base
