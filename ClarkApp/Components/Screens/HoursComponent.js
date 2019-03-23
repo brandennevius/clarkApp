@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     Title: {
         textAlign: 'center',
         color: '#dd2a2a',
+        alignItems: 'center',
     },
     header: {
         height: HEIGHT * .10,
