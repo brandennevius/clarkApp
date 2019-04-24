@@ -9,6 +9,7 @@
   "dependencies": {
     "@types/expo__vector-icons": "^9.0.1",
     "expo": "^32.0.0",
+    "i": "^0.3.6",
     "native-base": "^2.12.0",
     "node-google-calendar": "^1.1.1",
     "peer": "^0.2.10",
@@ -16,6 +17,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
     "react-native-calendars": "^1.22.0",
     "react-native-customize-selected-date": "^1.0.1",
+    "react-native-firebase": "^5.3.1",
     "react-native-ionicons": "^4.5.5",
     "react-native-pdf": "^5.0.12",
     "react-native-vector-icons": "^6.4.1",

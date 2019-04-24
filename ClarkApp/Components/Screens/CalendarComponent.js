@@ -18,6 +18,7 @@ import {
 } from 'native-base';
 import { Calendar } from 'react-native-calendars';
 import MenuButton from '../Home/MenuButton';
+import Footer1 from '../Footer/Footer1';
 
 export default class CalendarsComponent extends Component {
     constructor(props) {
@@ -163,13 +164,13 @@ export default class CalendarsComponent extends Component {
                         <Right />
                     <Content padder>
                     </Content>
-                    <Footer style={styles.footer}>
-                        <FooterTab >
+                    
+                        <FooterTab styles = {StyleSheet.FooterTab}>
                             <Button full>
                                 <Text style={styles.footerText}></Text>
                             </Button>
                         </FooterTab>
-                    </Footer>
+                    <Footer1/>
                 </Container>
         );
     }
@@ -210,8 +211,11 @@ const styles = StyleSheet.create({
         height: 100,
         backgroundColor:'#dd2a2a',
     },
-    footer: {
-        height: 20,
+    Footer1: {
+        
         backgroundColor: '#dd2a2a',
+    },
+    FooterTab: {
+        backgroundColor: 'red',
     }
 });

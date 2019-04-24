@@ -3,8 +3,7 @@ import { Container,Header,Title,Content, Left,Right,Body,Text } from 'native-bas
 import { StyleSheet, Dimensions } from 'react-native';
 import MenuButton from '../Home/MenuButton';
 import Footer1 from '../Footer/Footer1';
-
-
+import firebase from 'react-native-firebase';
 
 export default class HoursComponent extends Component {
     constructor(props) {

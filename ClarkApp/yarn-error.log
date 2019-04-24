@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add react-native-fetch-blob
+  /usr/local/bin/node /usr/local/bin/yarn add react-native-pod
 
 PATH: 
-  /Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
+  /Users/brandennevius/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS
 
 Yarn version: 
   1.13.0
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/Users/brandennevius/Desktop/GitHub/ClarkApp/ClarkApp/node_modules/react-native-vector-icons/node_modules/cross-spawn'
+  Error: EACCES: permission denied, mkdir '/Users/brandennevius/Desktop/GitHub/ClarkApp/ClarkApp/node_modules/protobufjs/node_modules/is-fullwidth-code-point'
 
 npm manifest: 
   {
@@ -28,6 +28,8 @@ npm manifest:
     "dependencies": {
       "@types/expo__vector-icons": "^9.0.1",
       "expo": "^32.0.0",
+      "firebase": "^5.9.4",
+      "i": "^0.3.6",
       "native-base": "^2.12.0",
       "node-google-calendar": "^1.1.1",
       "peer": "^0.2.10",
@@ -35,9 +37,11 @@ npm manifest:
       "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
       "react-native-calendars": "^1.22.0",
       "react-native-customize-selected-date": "^1.0.1",
+      "react-native-firebase": "^5.3.1",
       "react-native-ionicons": "^4.5.5",
       "react-native-pdf": "^5.0.12",
       "react-native-vector-icons": "^6.4.1",
+      "react-native-view-pdf": "^0.8.1",
       "react-navigation": "^3.3.2",
       "rn-fetch-blob": "^0.10.15"
     },

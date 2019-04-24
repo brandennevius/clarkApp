@@ -1,4 +1,4 @@
-import PDFView from 'react-native-view-pdf';
+/*import PDFView from 'react-native-view-pdf';
 import React from 'react'; 
 
 
@@ -16,4 +16,4 @@ export default class ScarlettComponent extends React.Component {
                 />
         );
     }
-}
+}*/
