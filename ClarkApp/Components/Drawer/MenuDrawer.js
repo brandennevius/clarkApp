@@ -38,7 +38,7 @@ export default class MenuDrawer extends React.Component {
                         {this.navLink('Home', 'Home')}
                         {this.navLink('Calendar', 'Calendar')}
                         {this.navLink('Hours', 'Hours')}
-                        
+                        {this.navLink('Dining', 'Dining')}
                         
                     </View>
                 </ScrollView>
