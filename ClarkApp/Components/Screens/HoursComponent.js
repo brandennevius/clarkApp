@@ -5,7 +5,6 @@ import MenuButton from '../Home/MenuButton';
 import Footer1 from '../Footer/Footer1';
 
 
-
 export default class HoursComponent extends Component {
     constructor(props) {
         super(props);

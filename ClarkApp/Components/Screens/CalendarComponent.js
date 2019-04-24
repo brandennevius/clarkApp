@@ -164,6 +164,12 @@ export default class CalendarsComponent extends Component {
                         <Right />
                     <Content padder>
                     </Content>
+                    
+                        <FooterTab styles = {StyleSheet.FooterTab}>
+                            <Button full>
+                                <Text style={styles.footerText}></Text>
+                            </Button>
+                        </FooterTab>
                     <Footer1/>
                 </Container>
         );
@@ -209,8 +215,11 @@ const styles = StyleSheet.create({
         backgroundColor: '#dd2a2a'
 
     },
-    footer: {
-        height: 20,
+    Footer1: {
+        
         backgroundColor: '#dd2a2a',
+    },
+    FooterTab: {
+        backgroundColor: 'red',
     }
 });
