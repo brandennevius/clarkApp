@@ -44,9 +44,7 @@ const DrawerNavigator = createDrawerNavigator(
         Hours: {
             screen: HoursComponent
         },
-        Scarlett: {
-            screen: ScarlettComponent
-        }
+        
         
     },
     DrawerConfig
