@@ -7,6 +7,7 @@ import LoginComponent from '../Screens/LoginComponent';
 import CalendarComponent from '../Screens/CalendarComponent';
 import MenuDrawer from '../Drawer/MenuDrawer';
 import HoursComponent from '../Screens/HoursComponent';
+import DiningComponent from 'c:/Users/abdur/OneDrive/Documents/ClarkApp/ClarkApp/Components/Screens/DiningComponent'
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -42,6 +43,9 @@ const DrawerNavigator = createDrawerNavigator(
         },
         Hours: {
             screen: HoursComponent
+        },
+        Dining: {
+            screen: DiningComponent
         }
         
     },
