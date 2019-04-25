@@ -7,8 +7,8 @@ import LoginComponent from '../Screens/LoginComponent';
 import CalendarComponent from '../Screens/CalendarComponent';
 import MenuDrawer from '../Drawer/MenuDrawer';
 import HoursComponent from '../Screens/HoursComponent';
-
 import ScarlettComponent from '../Screens/ScarlettComponent';
+import DiningComponent from '../Screens/DiningComponent'
 
 const WIDTH = Dimensions.get('window').width;
 
