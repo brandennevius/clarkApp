@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Container, 
   Drawer, 
   Header, 
-  Title, 
+  Title,
+  StatusBar, 
   Content, 
   Footer, 
   FooterTab, 
@@ -13,6 +14,7 @@ import { Container,
   Icon, 
   Text, 
   Accordion,
+  View,
  } 
   from 'native-base';
 import {StyleSheet, Alert, Dimensions} from 'react-native';
@@ -34,6 +36,7 @@ if (mm < 10) {
   mm = '0' + mm;
 }
 today = mm + '/' + dd + '/' + yyyy;
+
 
 
 export default class HomepageComponent extends Component {
@@ -66,14 +69,14 @@ export default class HomepageComponent extends Component {
         </Content>
         <Footer1/>
       </Container>
-    );
+      );
+    }
   }
-}
-
-const HEIGHT = Dimensions.get('window').height;
-const width = '100%';
-
-
+  
+  const HEIGHT = Dimensions.get('window').height;
+  const width = '100%';
+  
+  
 const styles = StyleSheet.create({
   footer: {
     backgroundColor: '#dd2a2a',

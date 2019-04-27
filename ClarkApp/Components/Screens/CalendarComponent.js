@@ -32,6 +32,8 @@ export default class CalendarsComponent extends Component {
      to fetch data from different sources and we can mark different colors accordingly. 
      Below are different markings you can make and each one is displayed in the app under the calendar tab. 
     */
+
+
     render() {
         return (
                 <Container style={{ flex: 0 }}>
