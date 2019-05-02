@@ -53,9 +53,15 @@ const styles = StyleSheet.create({
         width,
         backgroundColor: '#dd2a2a'
       },
-        headerStyle: {
-          fontSize: 36,
-          textAlign: 'center',
-          fontWeight: '100',
-        }
+    headerStyle: {
+        fontSize: 36,
+        textAlign: 'center',
+        fontWeight: '100',
+    },
+    title: {
+        textAlign: 'center',
+        fontSize: 21,
+        fontWeight: '500',
+        
+        },
 });

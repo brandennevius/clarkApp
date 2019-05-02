@@ -24,11 +24,6 @@ import { StyleSheet, Alert, Dimensions, ActivityIndicator} from 'react-native';
 import MenuButton from "../Home/MenuButton";
 import Footer1 from '../Footer/Footer1';
 
-
-
-
-
-
 export default class HomepageComponent extends Component {
 
   constructor(props) {
