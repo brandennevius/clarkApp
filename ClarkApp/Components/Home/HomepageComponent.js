@@ -69,7 +69,7 @@ export default class HomepageComponent extends Component {
           <Left>
             <MenuButton navigation={this.props.navigation} />
           </Left>
-          <Body>
+          <Body style={{flex: 3}}>
             <Text style={styles.title}>Whats Happening</Text>
           </Body>
           <Right />

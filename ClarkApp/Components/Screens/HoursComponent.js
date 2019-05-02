@@ -18,7 +18,7 @@ export default class HoursComponent extends Component {
                     <Left>
                         <MenuButton navigation={this.props.navigation} />
                     </Left>
-                    <Body>
+                    <Body style={{flex: 3}}>
                         <Text style={styles.title}>Facility Hours</Text>
                     </Body>
                     <Right />
