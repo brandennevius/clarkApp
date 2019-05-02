@@ -59,7 +59,7 @@ export default class CalendarsComponent extends Component {
                             <MenuButton navigation={this.props.navigation}/>
                         </Left>
                         <Body>
-                            <Title>CALENDAR</Title>
+                            <Text style = {styles.title}>Calendar</Text>
                             </Body> 
                             <Right />
                             </Header>
@@ -181,7 +181,7 @@ export default class CalendarsComponent extends Component {
                                 }}
                                 hideArrows={false}
                             />
-                        <Text style = { styles.Events}> EVENTS </Text>
+                        <Text style = {styles.Events}> EVENTS </Text>
                         <Right />
                     <Content padder>
                     <View style={{ flex: 3, backgroundColor: '#dd2a2a'}}>
@@ -239,8 +239,14 @@ const styles = StyleSheet.create({
     },
     Events: {
         color: 'red',
-        fontSize: 25,
+        fontSize: 23,
         textAlign: 'center',
-        fontWeight: '400',
+        fontWeight: '500',
+    },
+    title: {
+        textAlign: 'center',
+        fontSize: 21,
+        fontWeight: '500',
     }
+    
 });

@@ -60,8 +60,7 @@ export default class HomepageComponent extends Component {
             <MenuButton navigation = {this.props.navigation}/>
           </Left>
           <Body>
-            <Title style={styles.Title}></Title>
-            <Text style ={styles.Header}> NEWS </Text>
+            <Text style ={styles.title}>Whats Happening</Text>
           </Body>
           <Right/>
         </Header>
@@ -90,14 +89,11 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 15,
   },
-  Header: {
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: '500',
-  },
-  Title: {
-    textAlign: 'center',
-    color: '#dd2a2a',
+  title: {
+      textAlign: 'center',
+      fontSize: 21,
+      fontWeight: '500',
+  
   },
   header: {
     height: HEIGHT * .10,

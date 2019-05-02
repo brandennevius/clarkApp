@@ -19,8 +19,7 @@ export default class HoursComponent extends Component {
                         <MenuButton navigation={this.props.navigation} />
                     </Left>
                     <Body>
-                        <Title style={styles.Title}></Title>
-                        <Text style={styles.Date}>Hours Page</Text>
+                        <Text style={styles.title}>Facility Hours</Text>
                     </Body>
                     <Right />
                 </Header>
@@ -36,15 +35,15 @@ const width = '100%';
 const HEIGHT = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
-    Title: {
-        textAlign: 'center',
-        color: '#dd2a2a',
-        alignItems: 'center',
-    },
     header: {
         height: HEIGHT * .10,
         width,
         backgroundColor: '#dd2a2a'
 
-    }
+    },
+    title: {
+        textAlign: 'center',
+         fontSize: 21,
+        fontWeight: '500',
+        },
 });
