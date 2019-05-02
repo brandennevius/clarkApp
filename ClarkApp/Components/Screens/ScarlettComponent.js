@@ -1,141 +1,61 @@
-import React, { Component } from 'react'
-import Swiper from 'react-native-deck-swiper'
-import { Button, StyleSheet, Text, View } from 'react-native'
+//This is an example code to Load Local HTML File in WebView//
+import React, { Component } from 'react';
+//import react in our code. 
 
-// demo purposes only
-function* range(start, end) {
-    for (let i = start; i <= end; i++) {
-        yield i
-    }
-}
+import { StyleSheet, WebView, Dimensions } from 'react-native';
+import { Container, Header, Left, Body, Text, Right} from 'native-base';
+import MenuButton from "../Home/MenuButton";
 
-export default class Exemple extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            cards: [...range(Infinity)],
-            swipedAllCards: false,
-            swipeDirection: '',
-            cardIndex: 0
-        }
-    }
+//import all the components we are going to use. 
 
-    renderCard = (card, index) => {
-        return (
-            <View style={styles.card}>
-                <Text style={styles.text}>Scarlett</Text>
-            </View>
-        )
-    };
-
-    onSwiped = (type) => {
-        console.log(`on swiped ${type}`)
-    }
-
-    onSwipedAllCards = () => {
-        this.setState({
-            swipedAllCards: true
-        })
-    };
-
-    swipeLeft = () => {
-        this.swiper.swipeLeft()
-    };
-
+class ScarlettComponent extends Component {
     render() {
         return (
-            <View style={styles.container}>
-                <Swiper
-                    ref={swiper => {
-                        this.swiper = swiper
-                    }}
-                    onSwiped={() => this.onSwiped('general')}
-                    onSwipedLeft={() => this.onSwiped('left')}
-                    onSwipedRight={() => this.onSwiped('right')}
-                    onSwipedTop={() => this.onSwiped('top')}
-                    onSwipedBottom={() => this.onSwiped('bottom')}
-                    onTapCard={this.swipeLeft}
-                    cards={this.state.cards}
-                    cardIndex={this.state.cardIndex}
-                    cardVerticalMargin={80}
-                    renderCard={this.renderCard}
-                    onSwipedAll={this.onSwipedAllCards}
-                    stackSize={3}
-                    stackSeparation={15}
-                    overlayLabels={{
+            <Container>
+                <Header style= {styles.header}>
+                    <Left>
+                        <MenuButton navigation={this.props.navigation} />
+                    </Left>
+                    <Body>
+                        <Text style={styles.title}>Scarlett</Text>
+                    </Body>
+                    <Right />
+                </Header>
+                <WebView
+                    style={styles.WebViewStyle}
+                    //Loading html file from project folder
+                    source={require('../../resources/Scarlett.pdf')}
+                    //Enable Javascript support
+                    javaScriptEnabled={true}
+                    //For the Cache
+                    domStorageEnabled={true}
+                />
+            </Container>
 
-                        left: {
-                            title: 'BACK',
-                            style: {
-                                label: {
-                                    backgroundColor: 'black',
-                                    borderColor: 'black',
-                                    color: 'white',
-                                    borderWidth: 1
-                                },
-                                wrapper: {
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-end',
-                                    justifyContent: 'flex-start',
-                                    marginTop: 30,
-                                    marginLeft: -30
-                                }
-                            }
-                        },
-                        right: {
-                            title: 'NEXT',
-                            style: {
-                                label: {
-                                    backgroundColor: 'black',
-                                    borderColor: 'black',
-                                    color: 'white',
-                                    borderWidth: 1
-                                },
-                                wrapper: {
-                                    flexDirection: 'column',
-                                    alignItems: 'flex-start',
-                                    justifyContent: 'flex-start',
-                                    marginTop: 30,
-                                    marginLeft: 30
-                                }
-                            }
-                        }
-                    }
-                }
-                        
-                    animateOverlayLabelsOpacity
-                    animateCardOpacity
-                    swipeBackCard
-                >
-                    <Button onPress={() => this.swiper.swipeBack()} title='Swipe Back' />
-                </Swiper>
-            </View>
-        )
+        );
     }
 }
+export default ScarlettComponent;
+
+   
+const HEIGHT = Dimensions.get('window').height;
+const width = '100%';
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: 'red'
-    },
-    card: {
-        flex: 1,
-        borderRadius: 4,
-        borderWidth: 2,
-        borderColor: '#E8E8E8',
+    WebViewStyle: {
         justifyContent: 'center',
-        backgroundColor: 'white'
+        alignItems: 'center',
+        flex: 1,
+        marginTop: 0,
     },
-    text: {
-        textAlign: 'center',
-        fontSize: 50,
-        backgroundColor: 'transparent'
-    },
-    done: {
-        textAlign: 'center',
-        fontSize: 30,
-        color: 'white',
-        backgroundColor: 'transparent'
-    }
-})
+    header: {
+        height: HEIGHT * .10,
+        width,
+        backgroundColor: '#dd2a2a'
+      },
+        headerStyle: {
+          fontSize: 36,
+          textAlign: 'center',
+          fontWeight: '100',
+        }
+});
