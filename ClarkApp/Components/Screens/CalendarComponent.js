@@ -19,19 +19,36 @@ import {
 import { Calendar } from 'react-native-calendars';
 import MenuButton from '../Home/MenuButton';
 import Footer1 from '../Footer/Footer1';
+import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
+
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+if (dd < 10) {
+    dd = '0' + dd;
+}
+if (mm < 10) {
+    mm = '0' + mm;
+}
+today = mm + '/' + dd + '/' + yyyy;
 
 export default class CalendarsComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {};
         this.onDayPress = this.onDayPress.bind(this);
+       
     }
     /* The Calendar Component comes from the react native calendar module. 
-    it can take in a marked dates array and add custom styles to it, so athletic events,
+    it can take in marked dates  and add custom styles to it, so athletic events,
      academic, events and others can have their own color on the map. We just have to find a way
      to fetch data from different sources and we can mark different colors accordingly. 
      Below are different markings you can make and each one is displayed in the app under the calendar tab. 
     */
+    
+
 
 
     render() {
@@ -42,7 +59,7 @@ export default class CalendarsComponent extends Component {
                             <MenuButton navigation={this.props.navigation}/>
                         </Left>
                         <Body>
-                            <Title>Calendar</Title>
+                            <Title>CALENDAR</Title>
                             </Body> 
                             <Right />
                             </Header>
@@ -51,15 +68,16 @@ export default class CalendarsComponent extends Component {
                                 style={styles.calendar}
                                 onDayLongPress={this.onDayLongPress}
                                 hideExtraDays
-                                current={'2019-03-01'}
+                                current={today}
                                 minDate={'2019-03-01'}
                                 markingType={'custom'}
                                 markedDates={{
-                                    '2019-03-01': {
+                                    current: {
                                         customStyles: {
                                             container: {
-                                                backgroundColor: 'white',
-                                                elevation: 2
+                                                backgroundColor: 'red',
+                                                elevation: 2,
+                                                borderRadius: 0,
                                             },
                                             text: {
                                                 color: 'blue',
@@ -134,7 +152,7 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2019-03-30': {
+                                    today: {
                                         customStyles: {
                                             container: {
                                                 backgroundColor: 'violet',
@@ -149,10 +167,10 @@ export default class CalendarsComponent extends Component {
                                             },
                                         }
                                     },
-                                    '2019-03-31': {
+                                    '2019-04-28': {
                                         customStyles: {
                                             container: {
-                                                backgroundColor: 'green',
+                                                backgroundColor: 'red',
                                                 borderRadius: 0,
                                             },
                                             text: {
@@ -163,16 +181,12 @@ export default class CalendarsComponent extends Component {
                                 }}
                                 hideArrows={false}
                             />
+                        <Text style = { styles.Events}> EVENTS </Text>
                         <Right />
                     <Content padder>
+                    <View style={{ flex: 3, backgroundColor: '#dd2a2a'}}>
+                    </View>
                     </Content>
-                    
-                        <FooterTab styles = {StyleSheet.FooterTab}>
-                            <Button full>
-                                <Text style={styles.footerText}></Text>
-                            </Button>
-                        </FooterTab>
-                    <Footer1/>
                 </Container>
         );
     }
@@ -196,7 +210,6 @@ const styles = StyleSheet.create({
         paddingTop: 10,
         borderBottomWidth: 0,
         borderColor: '#eee',
-        height: 500,
         width: WIDTH ,
         paddingRight: 10,
         paddingLeft: 10,
@@ -223,5 +236,11 @@ const styles = StyleSheet.create({
     },
     FooterTab: {
         backgroundColor: 'red',
+    },
+    Events: {
+        color: 'red',
+        fontSize: 25,
+        textAlign: 'center',
+        fontWeight: '400',
     }
 });

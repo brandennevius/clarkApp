@@ -26,7 +26,7 @@ export default class HoursComponent extends Component {
                 </Header>
                 <Content padder>
                 </Content>
-                <Footer1 />
+                
             </Container>
         );
     }

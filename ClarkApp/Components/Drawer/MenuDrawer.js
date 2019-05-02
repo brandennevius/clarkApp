@@ -3,6 +3,7 @@ import {View,Text,Image,ScrollView,Dimensions, StyleSheet, TouchableOpacity } fr
 
 
 
+
 const WIDTH = Dimensions.get('window').width 
 const HEIGHT = Dimensions.get('window').height
 

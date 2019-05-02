@@ -47,6 +47,9 @@ const DrawerNavigator = createDrawerNavigator(
         },
         Dining: {
             screen: DiningComponent
+        },
+        Scarlett: {
+            screen: ScarlettComponent
         }
         
     },

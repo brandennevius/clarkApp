@@ -54,25 +54,25 @@ export default class HomepageComponent extends Component {
 
   render() {
     return (
-      <Container style = {{flex: 1}}>
+      <Container style = {{flex: 3}}>
         <Header style= {styles.header}>
           <Left>
             <MenuButton navigation = {this.props.navigation}/>
           </Left>
           <Body>
             <Title style={styles.Title}></Title>
-            <Text style ={styles.Date}>{this.state.date}</Text>
+            <Text style ={styles.Header}> NEWS </Text>
           </Body>
-          <Right />
+          <Right/>
         </Header>
         <Content padder>
         </Content>
-        <Footer1/>
+        
       </Container>
       );
     }
   }
-  
+   
   const HEIGHT = Dimensions.get('window').height;
   const width = '100%';
   
@@ -90,8 +90,10 @@ const styles = StyleSheet.create({
     color: 'black',
     fontSize: 15,
   },
-  Date: {
+  Header: {
     textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '500',
   },
   Title: {
     textAlign: 'center',
@@ -101,6 +103,21 @@ const styles = StyleSheet.create({
     height: HEIGHT * .10,
     width,
     backgroundColor: '#dd2a2a'
-  
-  }
+  },
+    container: {
+      marginTop: 48,
+      flex: 1
+    },
+    headerStyle: {
+      fontSize: 36,
+      textAlign: 'center',
+      fontWeight: '100',
+      marginBottom: 24
+    },
+    elementsContainer: {
+      backgroundColor: '#ecf5fd',
+      marginLeft: 24,
+      marginRight: 24,
+      marginBottom: 24
+    },
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container,Header,Title,Content, Left,Right,Body,Text } from 'native-base';
+import { Container,Header,Title,Content, Left,Right,Body,Text,View, WebView } from 'native-base';
 import { StyleSheet, Dimensions } from 'react-native';
 import MenuButton from '../Home/MenuButton';
 import Footer1 from '../Footer/Footer1';
@@ -11,7 +11,6 @@ export default class DiningComponent extends Component {
         super(props);
        
     }
-
     render() {
         return (
             <Container style={{ flex: 1 }}>
@@ -27,7 +26,7 @@ export default class DiningComponent extends Component {
                 </Header>
                 <Content padder>
                 </Content>
-                <Footer1 />
+            
             </Container>
         );
     }
