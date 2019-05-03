@@ -21,11 +21,6 @@ import {
 import { StyleSheet, Alert, Dimensions, ActivityIndicator, StatusBar} from 'react-native';
 import MenuButton from "../Home/MenuButton";
 
-
-
-
-
-
 export default class HomepageComponent extends Component {
 
   constructor(props) {
@@ -73,7 +68,7 @@ export default class HomepageComponent extends Component {
           <Left>
             <MenuButton navigation={this.props.navigation} />
           </Left>
-          <Body style = {{ flex : 3}}>
+          <Body style={{flex: 3}}>
             <Text style={styles.title}>Whats Happening</Text>
           </Body>
           <Right />

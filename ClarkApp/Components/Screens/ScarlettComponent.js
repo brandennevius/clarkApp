@@ -62,5 +62,6 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 21,
         fontWeight: '500',
-    }
+        
+        },
 });
