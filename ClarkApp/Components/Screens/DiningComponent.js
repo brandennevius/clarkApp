@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container,Header,Title,Content, Left,Right,Body,Text,View, WebView } from 'native-base';
 import { StyleSheet, Dimensions } from 'react-native';
 import MenuButton from '../Home/MenuButton';
-import Footer1 from '../Footer/Footer1';
+
 
 
 

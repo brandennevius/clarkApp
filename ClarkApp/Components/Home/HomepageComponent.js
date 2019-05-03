@@ -4,10 +4,8 @@ import {
   Drawer,
   Header,
   Title,
-  StatusBar,
   Content,
-  Footer,
-  FooterTab,
+  
   Button,
   Left,
   Right,
@@ -20,9 +18,8 @@ import {
   CardItem,
 }
   from 'native-base';
-import { StyleSheet, Alert, Dimensions, ActivityIndicator} from 'react-native';
+import { StyleSheet, Alert, Dimensions, ActivityIndicator, StatusBar} from 'react-native';
 import MenuButton from "../Home/MenuButton";
-import Footer1 from '../Footer/Footer1';
 
 
 
@@ -69,12 +66,14 @@ export default class HomepageComponent extends Component {
 
 
     return (
+      
       <Container style={{ flex: 3 }}>
+      <StatusBar hidden/>
         <Header style={styles.header}>
           <Left>
             <MenuButton navigation={this.props.navigation} />
           </Left>
-          <Body>
+          <Body style = {{ flex : 3}}>
             <Text style={styles.title}>Whats Happening</Text>
           </Body>
           <Right />
