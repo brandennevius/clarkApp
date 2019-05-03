@@ -97,7 +97,7 @@ class HomePageComponent extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://140.232.172.92:5000/api/items', {
+    return fetch('http://192.168.1.238:5000/api/items', {
       method: 'GET',
       headers: {
         Accept: 'application/json',

@@ -105,7 +105,7 @@ class LoginComponent extends React.Component {
         <HeaderImageScrollView
           maxHeight={200}
           minHeight={MIN_HEIGHT}
-          headerImage={require('/Users/brandennevius/Desktop/GitHub/ClarkApp/ClarkApp/resources/read.jpg')}
+          //</View>headerImage={require('/Users/brandennevius/Desktop/GitHub/ClarkApp/ClarkApp/resources/read.jpg')}
           renderForeground={() => (
             <View style={{ height: 150, justifyContent: 'center', alignItems: 'left' }}>
              

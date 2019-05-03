@@ -1,251 +1,235 @@
 import React, { Component } from 'react';
-import { StyleSheet, ScrollView, View, Dimensions} from 'react-native';
-import {
-    Container,
-    Drawer,
-    Header,
-    Title,
-    Content,
-    Footer,
-    FooterTab,
-    Button,
-    Left,
-    Right,
-    Body,
-    Icon,
-    Text,
-    Accordion,
-} from 'native-base';
-import { Calendar } from 'react-native-calendars';
+import { StyleSheet, Text, View, Image, Dimensions, StatusBar, WebView, ActivityIndicator } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import { Header } from 'react-navigation';
 import MenuButton from '../Home/MenuButton';
-import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 
+import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
+import { Container } from 'native-base';
+import {Agenda} from 'react-native-calendars';
 
-var today = new Date();
-var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
-var yyyy = today.getFullYear();
-if (dd < 10) {
-    dd = '0' + dd;
-}
-if (mm < 10) {
-    mm = '0' + mm;
-}
-today = mm + '/' + dd + '/' + yyyy;
-
-export default class CalendarsComponent extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
-        this.onDayPress = this.onDayPress.bind(this);
-       
-    }
-    /* The Calendar Component comes from the react native calendar module. 
-    it can take in marked dates  and add custom styles to it, so athletic events,
-     academic, events and others can have their own color on the map. We just have to find a way
-     to fetch data from different sources and we can mark different colors accordingly. 
-     Below are different markings you can make and each one is displayed in the app under the calendar tab. 
-    */
-    
-
-
-
-    render() {
-        return (
-                <Container style={{ flex: 0 }}>
-                    <Header style ={styles.header}>
-                        <Left>
-                            <MenuButton navigation={this.props.navigation}/>
-                        </Left>
-                        <Body>
-                            <Text style = {styles.title}>Calendar</Text>
-                            </Body> 
-                            <Right />
-                            </Header>
-                            
-                            <Calendar style={styles.calendar}
-                                style={styles.calendar}
-                                onDayLongPress={this.onDayLongPress}
-                                hideExtraDays
-                                current={today}
-                                minDate={'2019-03-01'}
-                                markingType={'custom'}
-                                markedDates={{
-                                    current: {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'red',
-                                                elevation: 2,
-                                                borderRadius: 0,
-                                            },
-                                            text: {
-                                                color: 'blue',
-                                            },
-                                        }
-                                    },
-                                    '2019-03-08': { selected: true },
-                                    '2019-03-09': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'red',
-                                                elevation: 4,
-                                            },
-                                            text: {
-                                                color: 'white',
-                                            },
-                                        }
-                                    },
-                                    '2019-03-10': { disabled: true },
-                                    '2019-03-14': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'green',
-                                            },
-                                            text: {
-                                                color: 'white',
-                                            },
-                                        },
-                                    },
-                                    '2019-03-15': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'black',
-                                                elevation: 2
-                                            },
-                                            text: {
-                                                color: 'yellow',
-                                            },
-                                        }
-                                    },
-                                    '2019-03-20': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'pink',
-                                                elevation: 4,
-                                            },
-                                            text: {
-                                                color: 'blue',
-                                            },
-                                        }
-                                    },
-                                    '2019-03-21': { disabled: true },
-                                    '2019-03-28': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'green',
-                                            },
-                                            text: {
-                                                color: 'black',
-                                                fontWeight: 'bold'
-                                            },
-                                        },
-                                    },
-                                    '2019-03-29': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'white',
-                                                elevation: 2
-                                            },
-                                            text: {
-                                                color: 'blue',
-                                            },
-                                        }
-                                    },
-                                    today: {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'violet',
-                                                elevation: 4,
-                                                borderColor: 'red',
-                                                borderWidth: 5,
-                                            },
-                                            text: {
-                                                marginTop: 3,
-                                                fontSize: 11,
-                                                color: 'yellow',
-                                            },
-                                        }
-                                    },
-                                    '2019-04-28': {
-                                        customStyles: {
-                                            container: {
-                                                backgroundColor: 'red',
-                                                borderRadius: 0,
-                                            },
-                                            text: {
-                                                color: 'white',
-                                            },
-                                        },
-                                    }
-                                }}
-                                hideArrows={false}
-                            />
-                        <Text style = {styles.Events}> EVENTS </Text>
-                        <Right />
-                    <Content padder>
-                    <View style={{ flex: 3, backgroundColor: '#dd2a2a'}}>
-                    </View>
-                    </Content>
-                </Container>
-        );
-    }
-
-    onDayPress(day) {
-        this.setState({
-            selected: day.dateString
-        });
-    }
-}
-
-const WIDTH = Dimensions.get('window').width;
-const HEIGHT = Dimensions.get('window').height;
-const width = '100%';
-
-
+const MIN_HEIGHT = Header.HEIGHT + 70;
+const MAX_HEIGHT = 250;
 
 const styles = StyleSheet.create({
-    calendar: {
-        borderTopWidth: 0,
-        paddingTop: 10,
-        borderBottomWidth: 0,
-        borderColor: '#eee',
-        width: WIDTH ,
-        paddingRight: 10,
-        paddingLeft: 10,
-    },
-    text: {
-        textAlign: 'center',
-        borderColor: '#bbb',
-        padding: 10,
-        backgroundColor: '#dd2a2a'
-    },
-    container: {
-        flex: 0,
-        backgroundColor: 'white'
-    },
-    header: {
-        height: HEIGHT * .10,
-        width,
-        backgroundColor: '#dd2a2a'
-
-    },
-    Footer1: {
-        
-        backgroundColor: '#dd2a2a',
-    },
-    FooterTab: {
-        backgroundColor: 'red',
-    },
-    Events: {
-        color: 'red',
-        fontSize: 23,
-        textAlign: 'center',
-        fontWeight: '500',
+    image: {
+        height: MAX_HEIGHT,
+        width: Dimensions.get('window').width,
+        alignSelf: 'stretch',
+        resizeMode: 'cover',
     },
     title: {
-        textAlign: 'center',
-        fontSize: 21,
-        fontWeight: '500',
+        fontSize: 20,
+    },
+    name: {
+        fontWeight: 'bold',
+    },
+    section: {
+        padding: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#cccccc',
+        backgroundColor: 'white',
+    },
+    sectionTitle: {
+        fontSize: 18,
+        fontWeight: 'bold',
+    },
+    sectionContent: {
+        fontSize: 16,
+        textAlign: 'justify',
+    },
+    keywords: {
+        flexDirection: 'row',
+        justifyContent: 'flex-start',
+        alignItems: 'flex-start',
+        flexWrap: 'wrap',
+    },
+    keywordContainer: {
+        backgroundColor: '#999999',
+        borderRadius: 10,
+        margin: 10,
+        padding: 10,
+    },
+    keyword: {
+        fontSize: 16,
+        color: 'white',
+    },
+    titleContainer: {
+        flex: 1,
+        alignSelf: 'stretch',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    imageTitle: {
+        color: 'white',
+        backgroundColor: 'transparent',
+        fontSize: 24,
+    },
+    navTitleView: {
+        height: MIN_HEIGHT,
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: 16,
+        opacity: 0,
+    },
+    navTitle: {
+        color: 'white',
+        marginTop: 10,
+        fontSize: 18,
+        backgroundColor: 'transparent',
+    },
+    sectionLarge: {
+        height: 600,
+    },
+    imageLogo: {
+        height: MAX_HEIGHT / 2.0,
+        width: Dimensions.get('window').width / 2.0,
+        resizeMode: 'contain',
+
+    },
+    WebViewStyle: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: 1,
+        marginTop: 0,
+    }
+});
+
+
+class CalendarComponent extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+          items: {}
+        };
+      }
+    render() {
+
+        return (
+            <View style={{ flex: 1 }}>
+                <MenuButton navigation={this.props.navigation} />
+                <StatusBar barStyle="light-content" />
+                <HeaderImageScrollView
+                    maxHeight={MAX_HEIGHT}
+                    minHeight={MIN_HEIGHT}
+                    maxOverlayOpacity={0.6}
+                    minOverlayOpacity={0.3}
+                    fadeOutForeground
+                    renderHeader={() => <Image source={require('../../resources/asec.jpg')} style={styles.image} />}
+                    renderFixedForeground={() => (
+                        <Animatable.View
+                            style={styles.navTitleView}
+                            ref={navTitleView => {
+                                this.navTitleView = navTitleView;
+                            }}
+                        >
+                            <Text style={styles.navTitle}>
+                                Calendar
+              </Text>
+                        </Animatable.View>
+                    )}
+
+                >
+                    <TriggeringView
+                        onHide={() => this.navTitleView.fadeInUp(200)}
+                        onDisplay={() => this.navTitleView.fadeOut(100)}
+                    >
+                    </TriggeringView>
+
+                    <Container>
+                        <Agenda
+                            items={this.state.items}
+                            loadItemsForMonth={this.loadItems.bind(this)}
+                            selected={'2019-05-03'}
+                            renderItem={this.renderItem.bind(this)}
+                            renderEmptyDate={this.renderEmptyDate.bind(this)}
+                            rowHasChanged={this.rowHasChanged.bind(this)}
+                        // markingType={'period'}
+                        // markedDates={{
+                        //    '2017-05-08': {textColor: '#666'},
+                        //    '2017-05-09': {textColor: '#666'},
+                        //    '2017-05-14': {startingDay: true, endingDay: true, color: 'blue'},
+                        //    '2017-05-21': {startingDay: true, color: 'blue'},
+                        //    '2017-05-22': {endingDay: true, color: 'gray'},
+                        //    '2017-05-24': {startingDay: true, color: 'gray'},
+                        //    '2017-05-25': {color: 'gray'},
+                        //    '2017-05-26': {endingDay: true, color: 'gray'}}}
+                        // monthFormat={'yyyy'}
+                        // theme={{calendarBackground: 'red', agendaKnobColor: 'green'}}
+                        //renderDay={(day, item) => (<Text>{day ? day.day: 'item'}</Text>)}
+                        />
+                        
+                    </Container>
+
+                </HeaderImageScrollView>
+
+
+            </View>
+        );
+    }
+    loadItems(day) {
+        setTimeout(() => {
+          for (let i = -15; i < 85; i++) {
+            const time = day.timestamp + i * 24 * 60 * 60 * 1000;
+            const strTime = this.timeToString(time);
+            if (!this.state.items[strTime]) {
+              this.state.items[strTime] = [];
+              const numItems = Math.floor(Math.random() * 5);
+              for (let j = 0; j < numItems; j++) {
+                this.state.items[strTime].push({
+                  name: 'Item for ' + strTime,
+                  height: Math.max(50, Math.floor(Math.random() * 150))
+                });
+              }
+            }
+          }
+          //console.log(this.state.items);
+          const newItems = {};
+          Object.keys(this.state.items).forEach(key => {newItems[key] = this.state.items[key];});
+          this.setState({
+            items: newItems
+          });
+        }, 1000);
+        // console.log(`Load Items for ${day.year}-${day.month}`);
+      }
+    
+      renderItem(item) {
+        return (
+          <View style={[stylestwo.item, {height: item.height}]}><Text>{item.name}</Text></View>
+        );
+      }
+    
+      renderEmptyDate() {
+        return (
+          <View style={stylestwo.emptyDate}><Text>This is empty date!</Text></View>
+        );
+      }
+    
+      rowHasChanged(r1, r2) {
+        return r1.name !== r2.name;
+      }
+    
+      timeToString(time) {
+        const date = new Date(time);
+        return date.toISOString().split('T')[0];
+      }
     }
     
-});
+    const stylestwo = StyleSheet.create({
+      item: {
+        backgroundColor: 'white',
+        flex: 1,
+        borderRadius: 5,
+        padding: 10,
+        marginRight: 10,
+        marginTop: 17
+      },
+      emptyDate: {
+        height: 15,
+        flex:1,
+        paddingTop: 30
+      }
+    });
+
+export default CalendarComponent;

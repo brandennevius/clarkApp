@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, Image, Dimensions, StatusBar, WebView } from 'react-native';
+import { StyleSheet, Text, View, Image, Dimensions, StatusBar, WebView, ActivityIndicator } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { Header } from 'react-navigation';
 import MenuButton from '../Home/MenuButton';
@@ -95,23 +95,19 @@ const styles = StyleSheet.create({
     }
 });
 
-let Script = `
-      document.getElementById("input").addEventListener("focus", function() {  
-       var data = {
-      type: "OnFocusEvent",
-      message : "OnFocusEvent"
-     };
-      window.postMessage(JSON.stringify({data}),"*");
-        });
-      `;
-
-
 
 class DiningComponent extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = { visible: true };
+      }
+    
+      hideSpinner() {
+        this.setState({ visible: false });
+      }
 
-
-    render() {
+      render() {
 
         return (
             <View style={{ flex: 1 }}>
@@ -132,7 +128,7 @@ class DiningComponent extends Component {
                             }}
                         >
                             <Text style={styles.navTitle}>
-                                Facility Hours
+                                Dining Hours
               </Text>
                         </Animatable.View>
                     )}
@@ -146,15 +142,17 @@ class DiningComponent extends Component {
 
                     <Container>
                         <WebView
-                        
+                            onLoad={() => this.hideSpinner()}
                             source={{ uri: "https://menus.sodexomyway.com/BiteMenu/Menu?menuId=15280&locationId=39951001&whereami=https://clarkdining.sodexomyway.com/dining-near-me/resident-dining#" }}
+                            injectedJavaScript={'function hideHead(){elements = document.getElementsByClassName("alpha-nav"); while(elements.length > 0){elements[0].parentNode.removeChild(elements[0]);}   elements = document.getElementsByClassName("hero hero-general"); while(elements.length > 0){elements[0].parentNode.removeChild(elements[0]);}  };hideHead();'}
                             startInLoadingState
                         />
-                    
+                        {this.state.visible && (<ActivityIndicator /> )}
+                        <Text style={{ fontSize: 8, textAlign: "center", marginBottom: 10 }}>Copyright 2019</Text>
                     </Container>
-                    <Text style={{ fontSize: 8, textAlign: "center", marginBottom: 10 }}>Copyright 2019</Text>
+                    
                 </HeaderImageScrollView>
-
+                
 
             </View>
         );
