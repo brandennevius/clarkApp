@@ -1,6 +1,7 @@
 import React from 'react';
-import {View,Text,Image,ScrollView,Dimensions, StyleSheet, TouchableOpacity } from 'react-native';
-
+import {View, Text,Image, ScrollView, Dimensions, StyleSheet, TouchableOpacity, Button } from 'react-native';
+import { Icon, Left, Right } from 'native-base';
+import { Ionicons } from '@expo/vector-icons';
 
 
 
@@ -12,6 +13,7 @@ This is what changes the display of the user interface for the drawer.
 navLink is a function that uses touchableOpacity to activate and display links.
 */
 export default class MenuDrawer extends React.Component {
+    
     navLink(nav, text) {
         return (
             <TouchableOpacity style={{ height: 50 }} onPress={() => this.props.navigation.navigate(nav)}>
@@ -20,6 +22,7 @@ export default class MenuDrawer extends React.Component {
         )
     }
 
+   
     render() {
         return (
             <View style={styles.container}>
@@ -27,23 +30,27 @@ export default class MenuDrawer extends React.Component {
                     <View style={styles.topLinks}>
                         <View style={styles.profile}>
                             <View style={styles.imgView}>
-                                <Image style={styles.img} source={require('../Drawer/jonasClark.jpg')} />
+                                <Image style = {styles.img} source= {require('../../resources/clarkSeal.png')} />
                             </View>
                             <View style={styles.profileText}>
                                 <Text style={styles.name}></Text>
                             </View>
+                            
                         </View>
                     </View>
                     
                     <View style={styles.bottomLinks}>
+                        <Text>  </Text>
                         {this.navLink('Home', 'Home')}
+                        <Text>  </Text>
                         {this.navLink('Calendar', 'Calendar')}
+                        <Text>  </Text>
                         {this.navLink('Hours', 'Hours')}
+                        <Text>  </Text>
                         {this.navLink('Dining', 'Dining')}
+                        <Text>  </Text>
                         {this.navLink('Scarlett', 'Scarlett')}
                     
-                        
-                        
                     </View>
                 </ScrollView>
                 <View style={styles.footer}>
@@ -57,12 +64,12 @@ export default class MenuDrawer extends React.Component {
 
 
 
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: 'white',
     },
+    
     scroller: {
         flex: 1,
     },
@@ -73,6 +80,7 @@ const styles = StyleSheet.create({
         paddingTop: 25,
         borderBottomWidth: 1,
         borderBottomColor: '#777777',
+        paddingLeft: 50
     },
     profileText: {
         flex: 3,
@@ -85,30 +93,29 @@ const styles = StyleSheet.create({
         color: 'white',
         textAlign: 'left',
     },
-    imgView: {
-        flex: 1,
-        paddingLeft: 0,
-        paddingRight: 0,
-        paddingTop: 25,
-    },
-    img: {
-        paddingTop: 25,
-        flex: 1,
-        height: Dimensions.get('window').height,
-        width: Dimensions.get('window').width -40,
-        borderRadius: 0,
-       
-    },
     topLinks: {
         height: 150,
-        backgroundColor: '#dd2a2a',
+        backgroundColor: 'white',
+    },
+    img: {
+        
+        height: 110 ,
+        width: 110,
+        alignItems: 'center'
+    
+    },
+    imgView: {
+        alignItems: 'center'
+    
     },
     bottomLinks: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#dd2a2a',
         paddingTop: 10,
         paddingBottom: 450,
         fontSize: 14,
+        padding: 20,
+        paddingLeft:55
         
     },
     link: {
@@ -123,15 +130,16 @@ const styles = StyleSheet.create({
         height: 50,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: 'white',
-        borderTopWidth: 1,
-        borderTopColor: 'white'
+        backgroundColor: '#dd2a2a',
+        
+        paddingBottom: 60
     },
     version: {
         flex: 1,
         textAlign: 'right',
         marginRight: 20,
-        color: 'black'
+        color: 'black',
+        paddingBottom: 25
     },
     description: {
         flex: 1,

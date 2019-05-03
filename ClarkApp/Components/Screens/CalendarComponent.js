@@ -18,7 +18,6 @@ import {
 } from 'native-base';
 import { Calendar } from 'react-native-calendars';
 import MenuButton from '../Home/MenuButton';
-import Footer1 from '../Footer/Footer1';
 import { Table, TableWrapper, Row, Rows, Col } from 'react-native-table-component';
 
 
