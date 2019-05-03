@@ -1,30 +1,98 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Drawer,
-  Header,
-  Title,
-  Content,
-  
-  Button,
-  Left,
-  Right,
-  Body,
-  Icon,
-  Text,
-  Accordion,
-  View,
-  Card, 
-  CardItem,
-}
-  from 'native-base';
-import { StyleSheet, Alert, Dimensions, ActivityIndicator, StatusBar} from 'react-native';
-import MenuButton from "../Home/MenuButton";
+import { StyleSheet, Text, View, Image, Dimensions, StatusBar, ActivityIndicator, DeviceEventEmitter } from 'react-native';
+import * as Animatable from 'react-native-animatable';
+import { Header } from 'react-navigation';
+import { Card, CardItem, Body } from 'native-base';
+import MenuButton from '../Home/MenuButton';
 
-export default class HomepageComponent extends Component {
+import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
 
-  constructor(props) {
-    super(props);
+
+const MIN_HEIGHT = Header.HEIGHT + 20;
+const MAX_HEIGHT = 250;
+
+const styles = StyleSheet.create({
+  image: {
+    height: MAX_HEIGHT,
+    width: Dimensions.get('window').width,
+    alignSelf: 'stretch',
+    resizeMode: 'cover',
+  },
+  title: {
+    fontSize: 20,
+  },
+  name: {
+    fontWeight: 'bold',
+  },
+  section: {
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: '#cccccc',
+    backgroundColor: 'white',
+  },
+  sectionTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  sectionContent: {
+    fontSize: 16,
+    textAlign: 'justify',
+  },
+  keywords: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    flexWrap: 'wrap',
+  },
+  keywordContainer: {
+    backgroundColor: '#999999',
+    borderRadius: 10,
+    margin: 10,
+    padding: 10,
+  },
+  keyword: {
+    fontSize: 16,
+    color: 'white',
+  },
+  titleContainer: {
+    flex: 1,
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  imageTitle: {
+    color: 'white',
+    backgroundColor: 'transparent',
+    fontSize: 24,
+  },
+  navTitleView: {
+    height: MIN_HEIGHT,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 16,
+    opacity: 0,
+  },
+  navTitle: {
+    color: 'white',
+    marginTop: 10,
+    fontSize: 18,
+    backgroundColor: 'transparent',
+  },
+  sectionLarge: {
+    height: 600,
+  },
+  imageLogo: {
+    height: MAX_HEIGHT / 2.0,
+    width: Dimensions.get('window').width / 2.0,
+    resizeMode: 'contain',
+
+  },
+});
+
+class HomePageComponent extends Component {
+  constructor() {
+    super();
+    this.state = { showNavTitle: false };
     this.state = { isLoading: true }
   }
 
@@ -48,7 +116,6 @@ export default class HomepageComponent extends Component {
       });
   }
 
-
   render() {
 
     if (this.state.isLoading) {
@@ -59,91 +126,76 @@ export default class HomepageComponent extends Component {
       )
     }
 
-
     return (
-      
-      <Container style={{ flex: 3 }}>
-      <StatusBar hidden/>
-        <Header style={styles.header}>
-          <Left>
-            <MenuButton navigation={this.props.navigation} />
-          </Left>
-          <Body style={{flex: 3}}>
-            <Text style={styles.title}>Whats Happening</Text>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
+      <View style={{ flex: 1 }}>
+        <MenuButton navigation={this.props.navigation} />
+        <StatusBar barStyle="light-content" />
+        <HeaderImageScrollView
+          maxHeight={MAX_HEIGHT}
+          minHeight={MIN_HEIGHT}
+          maxOverlayOpacity={0.6}
+          minOverlayOpacity={0.3}
+          fadeOutForeground
+          renderHeader={() => <Image source={require('../../resources/read.jpg')} style={styles.image} />}
+          renderFixedForeground={() => (
+            <Animatable.View
+              style={styles.navTitleView}
+              ref={navTitleView => {
+                this.navTitleView = navTitleView;
+              }}
+            >
+              <Text style={styles.navTitle}>
+                What's Happening?
+              </Text>
+            </Animatable.View>
+          )}
+          renderForeground={() => (
+            <View style={styles.titleContainer}>
+              <Image source={require('../../resources/eventsLogo.png')} style={styles.imageLogo} />
+            </View>
+          )}
+        >
+          <TriggeringView
+            style={styles.section}
+            onHide={() => this.navTitleView.fadeInUp(200)}
+            onDisplay={() => this.navTitleView.fadeOut(100)}
+          >
+            <Text style={styles.title}>
+              <Text style={styles.name}>What's Happening?</Text>
+            </Text>
+          </TriggeringView>
 
           {
             this.state.eventSource.map((event) => {
               return (
-                <Card key={event._id}>
+
+                <Card key={event._id} style={{ marginRight: 10, marginLeft: 10 }}>
                   <CardItem header>
-                    <Text>{event.name}</Text>
+                    <Text style={{ fontWeight: 'bold' }}>Event: {event.title}</Text>
                   </CardItem>
                   <CardItem>
                     <Body>
                       <Text>
                         {event.description}
+                        Time: {event.time}
                       </Text>
                     </Body>
                   </CardItem>
                   <CardItem footer>
-                    <Text>{event.date}</Text>
+                    <Text style={{ fontWeight: 'bold' }}>Place: {event.place}</Text>
                   </CardItem>
                 </Card>
 
               );
             })
           }
+          <Text style={{ fontSize: 8, textAlign: "center", marginBottom: 10 }}>Copyright 2019</Text>
+        </HeaderImageScrollView>
 
-        </Content>
 
-      </Container>
+      </View>
     );
   }
 }
 
-const HEIGHT = Dimensions.get('window').height;
-const width = '100%';
-
-
-const styles = StyleSheet.create({
-  footer: {
-    backgroundColor: '#dd2a2a',
-    height: HEIGHT / 40,
-
-  },
-  footerText: {
-    color: 'black',
-    fontSize: 15,
-  },
-  title: {
-    textAlign: 'center',
-    fontSize: 21,
-    fontWeight: '500',
-
-  },
-  header: {
-    height: HEIGHT * .10,
-    width,
-    backgroundColor: '#dd2a2a'
-  },
-  container: {
-    marginTop: 48,
-    flex: 1
-  },
-  headerStyle: {
-    fontSize: 36,
-    textAlign: 'center',
-    fontWeight: '100',
-    marginBottom: 24
-  },
-  elementsContainer: {
-    backgroundColor: '#ecf5fd',
-    marginLeft: 24,
-    marginRight: 24,
-    marginBottom: 24
-  },
-});
+export default HomePageComponent;

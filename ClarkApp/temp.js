@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Image, Dimensions, StatusBar, WebView } from 'react-native';
 import * as Animatable from 'react-native-animatable';
-import { Header} from 'react-navigation';
+import { Header } from 'react-navigation';
 import MenuButton from '../Home/MenuButton';
 
 import HeaderImageScrollView, { TriggeringView } from 'react-native-image-header-scroll-view';
@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
 
 class ScarlettComponent extends Component {
 
-   
+
 
     render() {
 
@@ -120,13 +120,13 @@ class ScarlettComponent extends Component {
                             }}
                         >
                             <Text style={styles.navTitle}>
-                                The Scarlet
+                                Facility Hours
               </Text>
                         </Animatable.View>
                     )}
                     renderForeground={() => (
                         <View style={styles.titleContainer}>
-                            
+
                         </View>
                     )}
                 >
@@ -136,16 +136,16 @@ class ScarlettComponent extends Component {
                     >
                     </TriggeringView>
 
-                        <Container>
-                    <WebView
-                        style={styles.WebViewStyle}
-                        //Loading html file from project folder
-                        source={require('../../resources/Scarlett.pdf')}
-                        //Enable Javascript support
-                        javaScriptEnabled={true}
-                        //For the Cache
-                        domStorageEnabled={true}
-                    /></Container>
+                    <Container>
+                        <WebView
+                            style={styles.WebViewStyle}
+                            //Loading html file from project folder
+                            source={require('../../resources/Scarlett.pdf')}
+                            //Enable Javascript support
+                            javaScriptEnabled={true}
+                            //For the Cache
+                            domStorageEnabled={true}
+                        /></Container>
                     <Text style={{ fontSize: 8, textAlign: "center", marginBottom: 10 }}>Copyright 2019</Text>
                 </HeaderImageScrollView>
 

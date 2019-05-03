@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, Text,Image, ScrollView, Dimensions, StyleSheet, TouchableOpacity, Button } from 'react-native';
-import { Icon, Left, Right } from 'native-base';
+import { Icon, Left, Right, Content } from 'native-base';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -55,7 +55,6 @@ export default class MenuDrawer extends React.Component {
                 </ScrollView>
                 <View style={styles.footer}>
                     {this.navLink('Login', 'Login')}
-                    <Text style={styles.version}>v1.0</Text>
                 </View>
             </View>
         )
@@ -67,7 +66,8 @@ export default class MenuDrawer extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: '#DCDCDC',
+        
     },
     
     scroller: {
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     },
     topLinks: {
         height: 150,
-        backgroundColor: 'white',
+        backgroundColor: '#DCDCDC',
     },
     img: {
         
@@ -110,12 +110,13 @@ const styles = StyleSheet.create({
     },
     bottomLinks: {
         flex: 1,
-        backgroundColor: '#dd2a2a',
+        backgroundColor: '#DCDCDC',
         paddingTop: 10,
-        paddingBottom: 450,
+        paddingBottom: 420,
         fontSize: 14,
         padding: 20,
-        paddingLeft:55
+        paddingLeft:55,
+        borderBottomColor: 'black'
         
     },
     link: {
@@ -127,23 +128,13 @@ const styles = StyleSheet.create({
         textAlign: 'left',
     },
     footer: {
-        height: 50,
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#dd2a2a',
+        backgroundColor: '#DCDCDC',
+        borderColor: 'grey',
+        borderWidth: 1,
+        paddingBottom:50,
         
-        paddingBottom: 60
-    },
-    version: {
-        flex: 1,
-        textAlign: 'right',
-        marginRight: 20,
-        color: 'black',
-        paddingBottom: 25
-    },
-    description: {
-        flex: 1,
-        marginLeft: 20,
-        fontSize: 16,
+        
     }
 })
