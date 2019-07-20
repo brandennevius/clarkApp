@@ -54,7 +54,7 @@ export default class MenuDrawer extends React.Component {
                     </View>
                 </ScrollView>
                 <View style={styles.footer}>
-                    {this.navLink('Login', 'Login')}
+                    {this.navLink('','V.1.0')}
                 </View>
             </View>
         )

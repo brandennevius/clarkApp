@@ -97,7 +97,7 @@ class HomePageComponent extends Component {
   }
 
   componentDidMount() {
-    return fetch('http://140.232.172.92:5000/api/items', {
+    return fetch('http://192.168.1.156:5000/api/items', {
       method: 'GET',
       headers: {
         Accept: 'application/json',
@@ -171,7 +171,7 @@ class HomePageComponent extends Component {
 
                 <Card key={event._id} style={{ marginRight: 10, marginLeft: 10 }}>
                   <CardItem header>
-                    <Text style={{ fontWeight: 'bold' }}>Event: {event.title}</Text>
+                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>Event: {event.title}</Text>
                   </CardItem>
                   <CardItem>
                     <Body>
