@@ -9,7 +9,7 @@
   "dependencies": {
     "@types/expo__vector-icons": "^9.0.1",
     "expo": "^32.0.0",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "native-base": "^2.12.0",
     "node-google-calendar": "^1.1.1",
     "peer": "^0.2.10",
